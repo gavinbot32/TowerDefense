@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eec0d32b077247fb986183802fdc0dec, type: 3}
+  m_Name: CheckerBoard
+  m_EditorClassIdentifier: 
+  layer: {fileID: 11400000, guid: 3f851f6c17c847e4aa79ab19fc79d493, type: 2}
+  defaultBlock: {fileID: 1886358935065936, guid: e158d3f5328e1fe4196ecc5d8eebcee8,
+    type: 3}
+  rules:
+  - grid: 020000000100000002000000010000000000000001000000020000000100000002000000
+    block: {fileID: 1886358935065936, guid: e158d3f5328e1fe4196ecc5d8eebcee8, type: 3}
+    transform: 0
+  - grid: 010000000200000000000000020000000000000002000000020000000200000000000000
+    block: {fileID: 1986053002286778, guid: 505ad28b849b40247ac593fc3686dd16, type: 3}
+    transform: 0
+  thumbnail: {fileID: 0}

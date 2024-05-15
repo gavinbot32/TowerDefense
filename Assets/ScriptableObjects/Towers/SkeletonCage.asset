@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b946d69bcfe5c6243911d9eafd819044, type: 3}
+  m_Name: SkeletonCage
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 9017399683357335807, guid: 034edda4a7ea7ef4087620570e4ec11d, type: 3}
+  towerIcon: {fileID: 21300000, guid: c0e8a83372ed1fb449bf7b0ed1a40c84, type: 3}
+  towerName: Skelton Cage
+  type: 0
+  cost: 250
+  range: 5
