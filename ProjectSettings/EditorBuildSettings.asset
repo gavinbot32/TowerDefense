@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/TitleScreen.unity
+    guid: d823d653c8f2bf04bb9f968f9e52c9f3
+  - enabled: 1
     path: Assets/Scenes/World_Select.unity
     guid: 3b975c7c02d84e54b8030679bf0bdcca
   - enabled: 1
@@ -23,6 +26,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/World-0/0_Level_01.unity
     guid: c834135dd380c5a479f4512aee3d630b
+  - enabled: 1
+    path: Assets/Scenes/World-0/0_Level_02.unity
+    guid: c62d78b29d6557c4c8b3b161e5d6cbed
+  - enabled: 1
+    path: Assets/Scenes/World-0/0_Level_03.unity
+    guid: a3113edb49ee8e54fafcf5f860b680d9
+  - enabled: 1
+    path: Assets/Scenes/World-0/0_Level_04.unity
+    guid: ac1dbdf73d2d82c49b4f1a66907da0f0
+  - enabled: 1
+    path: Assets/Scenes/World-0/0_Level_05.unity
+    guid: 6d1bc0c55bead144886deee373fa5bc8
   - enabled: 1
     path: Assets/Scenes/World-1/Level_Select_1.unity
     guid: a5a0d011976bb28478738652726adbc9

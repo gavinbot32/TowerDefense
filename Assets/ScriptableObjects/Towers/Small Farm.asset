@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Small Farm
   m_EditorClassIdentifier: 
   prefab: {fileID: 3100494972308055648, guid: aa3836012ad8d3046afbb8bdb42fcc67, type: 3}
-  towerIcon: {fileID: 21300000, guid: 20694b809cc99514692641087289e03e, type: 3}
+  towerIcon: {fileID: 21300000, guid: 9d954d08eeb91c14b82682a3ff172440, type: 3}
   towerName: Small Farm
   type: 2
   cost: 50

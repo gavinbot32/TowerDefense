@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 public class BuildHandler : MonoBehaviour
@@ -55,7 +54,6 @@ public class BuildHandler : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, tileLayer))
             {
-                print(hit);
                 if (hit.collider.GetComponent<PlacementTile>())
                 {
                     if (hit.collider.GetComponent<PlacementTile>().tower == null)
@@ -122,7 +120,7 @@ public class BuildHandler : MonoBehaviour
         if (tower.type == TowerType.Ranged)
         {
             GameObject cylinder = Instantiate(rangePrefab, previewTower.GetComponent<Tower>().rotatingPart.transform.position, Quaternion.identity);
-            cylinder.transform.localScale = new Vector3(tower.range, 0.2f, tower.range);
+            cylinder.transform.localScale = new Vector3(tower.range*2, 0.2f, tower.range*2);
             cylinder.transform.SetParent(previewTower.transform);
         }
 

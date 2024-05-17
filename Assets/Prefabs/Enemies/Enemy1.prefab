@@ -148,7 +148,6 @@ MonoBehaviour:
   <health>k__BackingField: 25
   <bounty>k__BackingField: 50
   <damage>k__BackingField: 5
-  attackingTower: {fileID: 0}
 --- !u!114 &6625923282042075064
 MonoBehaviour:
   m_ObjectHideFlags: 0

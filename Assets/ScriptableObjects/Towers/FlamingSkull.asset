@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 8266389338097065750, guid: ae30a119cb15c2a4790702339313e273, type: 3}
   towerIcon: {fileID: 21300000, guid: f58d19e1420b5ee4b99406100d9674ec, type: 3}
-  towerName: Flaming Skull Tower
+  towerName: Flaming Skull
   type: 0
   cost: 100
   range: 5

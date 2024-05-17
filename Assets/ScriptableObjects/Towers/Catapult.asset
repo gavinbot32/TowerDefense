@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 5860705558572513063, guid: fd5894375e5a8c44aac435f9f53d0666, type: 3}
   towerIcon: {fileID: 21300000, guid: 9c3c787d92fb5fc4b97234b3f3340157, type: 3}
-  towerName: Catapult Tower
+  towerName: Catapult
   type: 0
   cost: 100
   range: 5
