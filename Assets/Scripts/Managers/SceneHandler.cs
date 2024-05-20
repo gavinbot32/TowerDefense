@@ -5,7 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class SceneHandler : MonoBehaviour
 {
-    
+
+    private void Awake()
+    {
+        Time.timeScale = 1.0f;
+    }
+
     public void LoadScene(int buildIndex)
     {
         SceneManager.LoadScene(buildIndex);

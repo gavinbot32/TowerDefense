@@ -18,7 +18,7 @@ public enum PathPosition
 }
 public class ProjectileLauncher : MonoBehaviour
 {
-
+    private Tower _tower;
     [SerializeField] private Animator animator;
 
     [Header("Range Variables")]
@@ -48,6 +48,7 @@ public class ProjectileLauncher : MonoBehaviour
 
     private void Awake()
     {
+        _tower = GetComponent<Tower>();
         curEnemiesInRange = new List<Enemy>();
         
     }
@@ -68,6 +69,7 @@ public class ProjectileLauncher : MonoBehaviour
             }
         }
         tarWaypoint = closest.transform;
+
     }
 
     private void OnValidate()
@@ -191,23 +193,26 @@ public class ProjectileLauncher : MonoBehaviour
 
         bool posDir = false;
         Vector3 cannonDir = Vector3.Normalize(transform.position - curTarget.transform.position);
-/*
-        switch (pathPosition)
-        {
-            case PathPosition.Left:
-                if (cannonDir.z > 0) posDir = true;
-                break;
-            case PathPosition.Right:
-                if(cannonDir.z < 0) posDir = true;
-                break;
-            case PathPosition.Top:
-                if(cannonDir.x < 0 )posDir = true;
-                break;
-            case PathPosition.Bottom:
-                if(cannonDir.x > 0) posDir = true;
-                break;
-        }*/
-   
+        /*
+                switch (pathPosition)
+                {
+                    case PathPosition.Left:
+                        if (cannonDir.z > 0) posDir = true;
+                        break;
+                    case PathPosition.Right:
+                        if(cannonDir.z < 0) posDir = true;
+                        break;
+                    case PathPosition.Top:
+                        if(cannonDir.x < 0 )posDir = true;
+                        break;
+                    case PathPosition.Bottom:
+                        if(cannonDir.x > 0) posDir = true;
+                        break;
+                }*/
+
+        if(_tower.triggerSounds.Length > 0 ) _tower.audioSource.PlayOneShot(_tower.RandomSound(_tower.triggerSounds));
+
+
         Instantiate(projectilePrefab, muzzle.position, Quaternion.identity)
         .GetComponent<Projectile>().Initialize(curTarget, projectileSpeed, projectileDamage, GetComponent<Tower>(),posDir);
         

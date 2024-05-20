@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class GameManager : MonoBehaviour
     private SceneHandler sceneHandler;
     private UIManager _uiManager;
     private SaveHandler saveHandler;
+    private PauseManager pauseManager;
+    public SettingsManager _settingsManager { get; private set; }
     [SerializeField]private int health;
     public int points;
 
@@ -39,10 +42,12 @@ public class GameManager : MonoBehaviour
         _uiManager = GetComponent<UIManager>();
         sceneHandler = GetComponent<SceneHandler>();
         saveHandler = GetComponent<SaveHandler>();
+        _settingsManager = GetComponent<SettingsManager>();
     }
 
     private void Start()
     {
+        pauseManager = FindObjectOfType<PauseManager>();
         waveIndex = -1;
     }
 
@@ -191,4 +196,12 @@ public class GameManager : MonoBehaviour
         saveHandler.PopulateSave();
         sceneHandler.LoadScene("WinScreen");
     }
+
+    public void OnPauseInput(InputAction.CallbackContext context)
+    {
+        print("inPause");
+
+        pauseManager.TogglePause();
+    }
+
 }
