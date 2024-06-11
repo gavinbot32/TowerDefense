@@ -18,6 +18,7 @@ public enum PathPosition
 }
 public class ProjectileLauncher : MonoBehaviour
 {
+    private delegate Enemy AttackMethod();
     private Tower _tower;
     [SerializeField] private Animator animator;
 
@@ -26,12 +27,16 @@ public class ProjectileLauncher : MonoBehaviour
     [SerializeField] private SphereCollider rangeCollider;
 
     [Header("Targeting Parameters")]
+
+
     [SerializeField] private Priority priority;
     private PathPosition pathPosition;
     private bool pathSideFound;
     private List<Enemy> curEnemiesInRange;
     [SerializeField] private Enemy curTarget;
     private Transform tarWaypoint;
+    private AttackMethod attackMethod;
+
 
     [Header("Attack Parameters")]
     [SerializeField] private float attackCooldown;
@@ -69,9 +74,97 @@ public class ProjectileLauncher : MonoBehaviour
             }
         }
         tarWaypoint = closest.transform;
-
+        SetAttackMethod();
     }
 
+
+    private void SetAttackMethod()
+    {
+        switch (priority)
+        {
+            case Priority.First:
+                attackMethod = new AttackMethod(AttackPriorityFirst);
+                break;
+            case Priority.Fast:
+                attackMethod = new AttackMethod(AttackPriorityFast);
+                break;
+            case Priority.Strong:
+                attackMethod = new AttackMethod(AttackPriorityStrongest);
+                break;
+            case Priority.Closest:
+                attackMethod = new AttackMethod(AttackPriorityClosest);
+                break;
+            case Priority.Waypoint:
+                attackMethod = new AttackMethod(AttackPriorityWaypoint);
+                break;
+            default:
+                attackMethod = new AttackMethod(AttackPriorityFirst);
+                break;
+
+        }
+    }
+    #region
+    private Enemy AttackPriorityFirst()
+    {
+        return curEnemiesInRange[0];
+    }
+    private Enemy AttackPriorityFast()
+    {
+        Enemy ret = null;
+        Enemy fastest = curEnemiesInRange[0];
+        foreach (Enemy e in curEnemiesInRange)
+        {
+            if (e.h_Movement.speed > e.h_Movement.speed)
+            {
+                fastest = e;
+            }
+        }
+        ret = fastest;
+        return ret;
+    }
+    private Enemy AttackPriorityClosest()
+    {
+        Enemy ret = null;
+        Enemy closest = curEnemiesInRange[0];
+        foreach (Enemy e in curEnemiesInRange)
+        {
+            if (Vector3.Distance(transform.position, e.transform.position) < Vector3.Distance(transform.position, closest.transform.position))
+            {
+                closest = e;
+            }
+        }
+        ret = closest;
+        return ret;
+    }
+    private Enemy AttackPriorityStrongest()
+    {
+        Enemy ret = null;
+        Enemy largestHealth = curEnemiesInRange[0];
+        foreach (Enemy e in curEnemiesInRange)
+        {
+            if (e.h_Stat.health > largestHealth.h_Stat.health)
+            {
+                largestHealth = e;
+            }
+        }
+        ret = largestHealth;
+        return ret;
+    }
+    private Enemy AttackPriorityWaypoint()
+    {
+        Enemy ret = null;
+        Enemy closest2 = curEnemiesInRange[0];
+        foreach (Enemy e in curEnemiesInRange)
+        {
+            if (Vector3.Distance(transform.position, e.transform.position) < Vector3.Distance(transform.position, closest2.transform.position))
+            {
+                closest2 = e;
+            }
+        }
+        ret = closest2;
+        return ret;
+    }
+    #endregion
     private void OnValidate()
     {
         rangeCollider.radius = range;
@@ -122,7 +215,7 @@ public class ProjectileLauncher : MonoBehaviour
     {
         Enemy ret = null;
         if (curEnemiesInRange.Count <= 0) return null;
-        switch (priority)
+      /* switch (priority)
         {
             case Priority.First:
                 ret = curEnemiesInRange[0];
@@ -171,8 +264,8 @@ public class ProjectileLauncher : MonoBehaviour
                 }
                 ret = closest2;
                 return ret;
-        }
-
+        }*/
+        ret = attackMethod.Invoke();
         return ret;
     }
 

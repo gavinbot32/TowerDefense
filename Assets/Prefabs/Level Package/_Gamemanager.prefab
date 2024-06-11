@@ -81,6 +81,7 @@ MonoBehaviour:
   e_settingSave:
     m_PersistentCalls:
       m_Calls: []
+  loadSettings: 0
 --- !u!114 &188007888051470455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,7 +281,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -376,3 +377,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   volumeMultipler: 0.25
+  _settingsManager: {fileID: 0}

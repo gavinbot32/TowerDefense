@@ -708,6 +708,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   volumeMultipler: 1
+  _settingsManager: {fileID: 0}
 --- !u!1 &3210288719431120320
 GameObject:
   m_ObjectHideFlags: 0

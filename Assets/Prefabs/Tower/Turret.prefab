@@ -197,7 +197,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: eb3165f67cf661a4ca0e9f008b5e66fd, type: 3}
   - {fileID: 8300000, guid: 1465d64b5a6ce2048a65c0830bf63758, type: 3}
   - {fileID: 8300000, guid: 5f08be5fd02d08a45984b8616ecbdca3, type: 3}
-  triggerSounds: []
+  triggerSounds:
+  - {fileID: 8300000, guid: 7124b9a2fb370e94fbc9a5623cad11bb, type: 3}
+  - {fileID: 8300000, guid: 6c9d878cd22a786499e6313e5dc1ca46, type: 3}
+  - {fileID: 8300000, guid: 0e34ed466e4557547b68b01bbeecfe4f, type: 3}
+  - {fileID: 8300000, guid: 35468070260a252409e32ff6a54fed40, type: 3}
+  - {fileID: 8300000, guid: 841e8ce11d247d04891f9c41972539be, type: 3}
+  - {fileID: 8300000, guid: f82505e8ae5d4ff48954bd42412d54d2, type: 3}
   audioSource: {fileID: 0}
 --- !u!114 &1193765006501065387
 MonoBehaviour:
@@ -286,6 +292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   volumeMultipler: 1
+  _settingsManager: {fileID: 0}
 --- !u!82 &6007017490140112766
 AudioSource:
   m_ObjectHideFlags: 0

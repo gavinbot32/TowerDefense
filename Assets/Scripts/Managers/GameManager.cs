@@ -199,7 +199,6 @@ public class GameManager : MonoBehaviour
 
     public void OnPauseInput(InputAction.CallbackContext context)
     {
-        print("inPause");
 
         pauseManager.TogglePause();
     }

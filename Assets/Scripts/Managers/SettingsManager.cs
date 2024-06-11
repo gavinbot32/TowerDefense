@@ -22,6 +22,10 @@ public class SettingsManager : MonoBehaviour
             LoadSettings();
         }
     }
+    private void OnDisable()
+    {
+        e_settingSave.RemoveAllListeners();
+    }
 
     public void SaveSettings()
     {
@@ -30,7 +34,7 @@ public class SettingsManager : MonoBehaviour
 
         PushOption(_settings.v_music_key, _settings.v_music);
         PushOption(_settings.v_sfx_key, _settings.v_sfx);
-
+        PlayerPrefs.Save();
         e_settingSave.Invoke();
     }
 
@@ -38,7 +42,7 @@ public class SettingsManager : MonoBehaviour
     {
         _settings.v_music = PullOption(_settings.v_music_key,0.5f);
         _settings.v_sfx = PullOption(_settings.v_sfx_key, 0.5f);
-
+        PlayerPrefs.Save();
         _settingCache.PushCache(_settings);
         e_settingSave.Invoke();
     }

@@ -9,27 +9,16 @@ public class PlacementTile : MonoBehaviour
     public GameObject highlightPrefab;
     public GameObject highlight;
 
-    private void Update()
+    private void Start()
     {
-        if (GameManager._instance.GetComponent<BuildHandler>().isBuilding && tower == null)
-        {
-            if (highlight == null)
-            {
-                float meshBoundY = GetComponent<MeshRenderer>().bounds.size.y;
-                Vector3 pos = new Vector3(transform.position.x, transform.position.y + meshBoundY / 2 + 0.075f, transform.position.z);
-                highlight = Instantiate(highlightPrefab, pos, Quaternion.identity);
-            }
-        }
-        else if (highlight != null && GameManager._instance.GetComponent<BuildHandler>().isBuilding == false)
-        {
-            Destroy(highlight);
-            highlight = null;
-        }
+        float meshBoundY = GetComponent<MeshRenderer>().bounds.size.y;
+        Vector3 pos = new Vector3(transform.position.x, transform.position.y + meshBoundY / 2 + 0.075f, transform.position.z);
+        highlight = Instantiate(highlightPrefab, pos, Quaternion.identity);
+        highlight.SetActive(false);
+    }
 
-        if (tower != null && highlight != null)
-        {
-            Destroy(highlight);
-            highlight = null;
-        }
+    private void FixedUpdate()
+    {
+        highlight.SetActive(GameManager._instance.GetComponent<BuildHandler>().isBuilding && tower == null);
     }
 }
