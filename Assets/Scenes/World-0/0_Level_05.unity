@@ -43566,6 +43566,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96718811571ea9d43b77e4004ddd5e3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1350792705 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1018307978891683795, guid: 9c93971093e927447902c94fc4ea56bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 3194469299124129288}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42b7ae8e989e2e344ba1696e8959988d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1357180285 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4310614304489658, guid: 5cbae0602ce9acf41a98fda3a353569a,
@@ -69587,6 +69599,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3543854426962633265, guid: 91e8c11a7b7c57b42bffa425f8398501,
+        type: 3}
+      propertyPath: _settingsManager
+      value: 
+      objectReference: {fileID: 1350792705}
     - target: {fileID: 4827578036029158896, guid: 91e8c11a7b7c57b42bffa425f8398501,
         type: 3}
       propertyPath: m_Pivot.x
@@ -70220,12 +70237,18 @@ PrefabInstance:
         type: 3}
       propertyPath: _settingCache
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: c65d1d40078c54d4e890f4540a6ded23,
+        type: 2}
     - target: {fileID: 3785131225467495547, guid: 9c93971093e927447902c94fc4ea56bf,
         type: 3}
       propertyPath: volumeMultipler
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3785131225467495547, guid: 9c93971093e927447902c94fc4ea56bf,
+        type: 3}
+      propertyPath: _settingsManager
+      value: 
+      objectReference: {fileID: 1350792705}
     - target: {fileID: 5116957027100943849, guid: 9c93971093e927447902c94fc4ea56bf,
         type: 3}
       propertyPath: waves.Array.size
